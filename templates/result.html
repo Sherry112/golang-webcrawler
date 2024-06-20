@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Analysis Result</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <h1>Analysis Result for {{.URL}}</h1>
+    {{if .Error}}
+    <p>Error: {{.Error}}</p>
+    {{else}}
+    <p>HTML Version: {{.HTMLVersion}}</p>
+    <p>Page Title: {{.Title}}</p>
+    <p>Headings:</p>
+    <ul>
+        {{range $level, $count := .Headings}}
+        <li>H{{$level}}: {{$count}}</li>
+        {{end}}
+    </ul>
+    <p>Internal Links: {{.InternalLinks}}</p>
+    <p>External Links: {{.ExternalLinks}}</p>
+    <p>Inaccessible Links: {{.InaccessibleLinks}}</p>
+    <p>Contains Login Form: {{.ContainsLoginForm}}</p>
+    {{end}}
+    <a href="/">Go back</a>
+</body>
+</html>
