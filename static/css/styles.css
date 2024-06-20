@@ -1,4 +1,28 @@
-/* Loader styles */
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.form-container {
+    width: 70%;
+    padding: 20px;
+    overflow: auto;
+}
+
+.loader-container {
+    position: relative;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .loader {
     border: 16px solid #f3f3f3;
     border-radius: 50%;
@@ -6,38 +30,33 @@
     width: 120px;
     height: 120px;
     animation: spin 2s linear infinite;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: none; /* Initially hidden */
-  }
-  
-  @keyframes spin {
+}
+
+@keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
-  }
-  
-  /* Cancel button styles */
-  #cancelButton {
-    display: none; /* Initially hidden */
-    position: fixed;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  /* Log area styles */
-  #logArea {
-    position: fixed;
-    top: 0;
-    right: 0;
+}
+
+.cancel-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #ff4d4d;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cancel-button:hover {
+    background-color: #ff1a1a;
+}
+
+.log-container {
     width: 30%;
-    height: 100%;
+    border-left: 1px solid #ccc;
     padding: 10px;
-    border: 1px solid #ccc;
     overflow-y: auto;
     background-color: #f9f9f9;
-    z-index: 1000;
-  }
-  
+}

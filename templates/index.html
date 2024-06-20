@@ -3,21 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Page Analyzer</title>
+    <title>Web Page Analyzer Home24</title>
     <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body>
-    <div style="width: 70%; float: left; padding: 20px;">
-        <h1>Web Page Analyzer</h1>
-        <form id="analyzeForm" action="/analyze" method="post">
-            <label for="url">Enter URL:</label>
-            <input type="text" id="url" name="url" required>
-            <button type="submit">Analyze</button>
-        </form>
-        <div id="loader" class="loader"></div>
-        <button id="cancelButton">Cancel</button>
+    <div class="container">
+        <div class="form-container">
+            <h1>Web Page Analyzer</h1>
+            <form id="analyzeForm" action="/analyze" method="post">
+                <label for="url">Enter URL:</label>
+                <input type="text" id="url" name="url" required>
+                <button type="submit">Analyze</button>
+            </form>
+            <div class="loader-container">
+                <div id="loader" class="loader"></div>
+                <button id="cancelButton" class="cancel-button">Cancel</button>
+            </div>
+        </div>
+        <div id="logArea" class="log-container"></div>
     </div>
-    <div id="logArea"></div>
     <script src="/static/js/script.js"></script>
 </body>
 </html>
